@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import './App.css'
 
 const CAR_BRANDS_AND_MODELS = [
   "Ford Mustang",
+  "Banana",
 ];
 
 const MAX_ATTEMPTS = 3;
+
+
 
 const HangmanGame = () => {
   const [selectedCar, setSelectedCar] = useState(
@@ -16,16 +20,9 @@ const HangmanGame = () => {
   const handleGuess = (letter) => {
     setGuessedLetters(new Set([...guessedLetters, letter]));
 
-    if (!selectedCar.includes(letter)) {
+    if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
       setAttemptsLeft(attemptsLeft - 1);
     }
-
-    setSelectedCar(
-      selectedCar
-        .split("")
-        .map((char) => (guessedLetters.has(char) || char === " " ? char : "_"))
-        .join("")
-    );
   };
 
   const isGameOver = () => {
@@ -35,7 +32,14 @@ const HangmanGame = () => {
   const getMaskedCarName = () => {
     return selectedCar
       .split("")
-      .map((char) => (guessedLetters.has(char) || char === " " ? char : "_"))
+      .map((char) => {
+        if (/^[a-zA-Z ]$/.test(char)) {
+          const isLetterGuessed = guessedLetters.has(char.toLowerCase());
+          return isLetterGuessed ? char : "_";
+        } else {
+          return char;
+        }
+      })
       .join("");
   };
 
@@ -52,7 +56,7 @@ const HangmanGame = () => {
       <p>{getMaskedCarName()}</p>
       <div>
         {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
-          <button key={letter} disabled={guessedLetters.has(letter)} onClick={() => handleGuess(letter)}>
+          <button key={letter} disabled={guessedLetters.has(letter.toLowerCase())} onClick={() => handleGuess(letter)}>
             {letter}
           </button>
         ))}
