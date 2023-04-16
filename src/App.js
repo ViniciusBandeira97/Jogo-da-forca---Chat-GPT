@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from "react";
 
 const CAR_BRANDS_AND_MODELS = [
@@ -20,6 +19,7 @@ const HangmanGame = () => {
 
   const handleGuess = (letter) => {
     setGuessedLetters(new Set([...guessedLetters, letter]));
+    setSelectedCar(selectedCar.replaceAll(letter, guessedLetters.has(letter) ? letter : "_"));
 
     if (!selectedCar.includes(letter)) {
       setAttemptsLeft(attemptsLeft - 1);
