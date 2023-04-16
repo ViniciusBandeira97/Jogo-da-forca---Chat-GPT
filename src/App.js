@@ -2,13 +2,9 @@ import React, { useState } from "react";
 
 const CAR_BRANDS_AND_MODELS = [
   "Ford Mustang",
-  "Chevrolet Camaro",
-  "Dodge Challenger",
-  "Nissan GT-R",
-  "Porsche 911",
 ];
 
-const MAX_ATTEMPTS = 6;
+const MAX_ATTEMPTS = 3;
 
 const HangmanGame = () => {
   const [selectedCar, setSelectedCar] = useState(
@@ -19,22 +15,28 @@ const HangmanGame = () => {
 
   const handleGuess = (letter) => {
     setGuessedLetters(new Set([...guessedLetters, letter]));
-    setSelectedCar(selectedCar.replaceAll(letter, guessedLetters.has(letter) ? letter : "_"));
 
     if (!selectedCar.includes(letter)) {
       setAttemptsLeft(attemptsLeft - 1);
     }
+
+    setSelectedCar(
+      selectedCar
+        .split("")
+        .map((char) => (guessedLetters.has(char) || char === " " ? char : "_"))
+        .join("")
+    );
+  };
+
+  const isGameOver = () => {
+    return attemptsLeft === 0 || selectedCar.replaceAll(" ", "").toLowerCase() === getMaskedCarName().toLowerCase();
   };
 
   const getMaskedCarName = () => {
     return selectedCar
       .split("")
-      .map((letter) => (guessedLetters.has(letter) || letter === " " ? letter : "_"))
+      .map((char) => (guessedLetters.has(char) || char === " " ? char : "_"))
       .join("");
-  };
-
-  const isGameOver = () => {
-    return attemptsLeft === 0 || getMaskedCarName() === selectedCar;
   };
 
   const resetGame = () => {
