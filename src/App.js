@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './App.css'
 
 const CAR_BRANDS_AND_MODELS = [
   "Ford Mustang",
@@ -16,13 +15,26 @@ const HangmanGame = () => {
   );
   const [guessedLetters, setGuessedLetters] = useState(new Set());
   const [attemptsLeft, setAttemptsLeft] = useState(MAX_ATTEMPTS);
+  const [wrongLetters, setWrongLetters] = useState([]);  /* O Estado "wrongLetters" armazena as letras Erradas */
+
 
   const handleGuess = (letter) => {
     setGuessedLetters(new Set([...guessedLetters, letter]));
+    
 
     if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
       setAttemptsLeft(attemptsLeft - 1);
     }
+    /* Verifica se a letra não está na palavra e adicioná-la ao estado "wrongLetters" */
+    if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
+      setAttemptsLeft(attemptsLeft - 1);
+      setWrongLetters([...wrongLetters, letter.toLowerCase()]);
+    }
+  };
+
+  /* Essa função filtra as Letras erradas */
+  const getWrongLetters = () => {
+    return wrongLetters.map((letter) => letter.toUpperCase()).join(", ");
   };
 
   const isGameOver = () => {
@@ -35,7 +47,7 @@ const HangmanGame = () => {
       .map((char) => {
         if (/^[a-zA-Z ]$/.test(char)) {
           const isLetterGuessed = guessedLetters.has(char.toLowerCase());
-          return isLetterGuessed ? char : "_";
+          return isLetterGuessed ? char : " _ ";
         } else {
           return char;
         }
@@ -51,8 +63,8 @@ const HangmanGame = () => {
 
   return (
     <div>
-      <h1>Hangman Game - Car Brands and Models Edition</h1>
-      <p>Attempts Left: {attemptsLeft}</p>
+      <h1>Jogo da forca - Car Brands and Models Edition</h1>
+      <p>Você possui: {attemptsLeft} tentativas</p>
       <p>{getMaskedCarName()}</p>
       <div>
         {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
@@ -60,6 +72,7 @@ const HangmanGame = () => {
             {letter}
           </button>
         ))}
+          <p>Wrong letters: {getWrongLetters()}</p>
       </div>
       {isGameOver() && (
         <div>
