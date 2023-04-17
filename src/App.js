@@ -5,6 +5,7 @@ const CAR_BRANDS_AND_MODELS = [
   "Banana",
 ];
 
+
 const MAX_ATTEMPTS = 3;
 
 
@@ -23,7 +24,7 @@ const HangmanGame = () => {
 
     if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
       setAttemptsLeft(attemptsLeft - 1);
-          /* Verifica se a letra não está na palavra e adicioná-la ao estado "wrongLetters" */
+          /* Se a letra selecionada não for correspondente da palavra-Secreta, então essa letra é add ao estado "wrongLetters" */
       setWrongLetters([...wrongLetters, letter.toLowerCase()]);
     }
   };
@@ -36,14 +37,18 @@ const HangmanGame = () => {
   };
 
   const isGameOver = () => {
-    return attemptsLeft === 0 || selectedCar.replaceAll(" ", "").toLowerCase() === getMaskedCarName().toLowerCase();
+    
+    const carNameWithoutSpaces = selectedCar.replaceAll(" ", "");
+    const isAllLettersGuessed = [...carNameWithoutSpaces].every((char) => guessedLetters.has(char.toLowerCase()));
+    return attemptsLeft === 0 || isAllLettersGuessed;   
   };
 
   const getMaskedCarName = () => {
+
     return selectedCar
       .split("")
       .map((char) => {
-        if (/^[a-zA-Z ]$/.test(char)) {
+        if (/^[a-zA-Z ]$/.test(char)) {    
           const isLetterGuessed = guessedLetters.has(char.toLowerCase());
           return isLetterGuessed ? char : " _ ";
         } else {
@@ -57,7 +62,6 @@ const HangmanGame = () => {
     setSelectedCar(CAR_BRANDS_AND_MODELS[Math.floor(Math.random() * CAR_BRANDS_AND_MODELS.length)]);
     setGuessedLetters(new Set());
     setWrongLetters(new Set());
-    getWrongLetters(new Set());
     setAttemptsLeft(MAX_ATTEMPTS);
   };
 
