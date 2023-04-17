@@ -20,21 +20,19 @@ const HangmanGame = () => {
 
   const handleGuess = (letter) => {
     setGuessedLetters(new Set([...guessedLetters, letter]));
-    
 
     if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
       setAttemptsLeft(attemptsLeft - 1);
-    }
-    /* Verifica se a letra não está na palavra e adicioná-la ao estado "wrongLetters" */
-    if (!selectedCar.toLowerCase().includes(letter.toLowerCase())) {
-      setAttemptsLeft(attemptsLeft - 1);
+          /* Verifica se a letra não está na palavra e adicioná-la ao estado "wrongLetters" */
       setWrongLetters([...wrongLetters, letter.toLowerCase()]);
     }
   };
 
   /* Essa função filtra as Letras erradas */
   const getWrongLetters = () => {
-    return wrongLetters.map((letter) => letter.toUpperCase()).join(", ");
+    return Array.from(wrongLetters)
+      .map((letter) => letter.toUpperCase())
+      .join(", ");
   };
 
   const isGameOver = () => {
@@ -58,6 +56,8 @@ const HangmanGame = () => {
   const resetGame = () => {
     setSelectedCar(CAR_BRANDS_AND_MODELS[Math.floor(Math.random() * CAR_BRANDS_AND_MODELS.length)]);
     setGuessedLetters(new Set());
+    setWrongLetters(new Set());
+    getWrongLetters(new Set());
     setAttemptsLeft(MAX_ATTEMPTS);
   };
 
