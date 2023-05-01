@@ -1,24 +1,24 @@
 import './App.css';
 import React, { useState } from "react";
 
-/** "CAR_BRANDS_AND_MODELS" Cria uma lista de marcas e modelos de carros para o jogo*/
-const CAR_BRANDS_AND_MODELS = [
+/** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo*/
+const Marca_Modelo = [
   "Ford Mustang",
   "Banana",
 ];
 
-/** "MAX_ATTEMPTS" Define um número máximo de erros que o jogador pode ter*/
-const MAX_ATTEMPTS = 3;
+/** "Tentativas" Define um número máximo de erros que o jogador pode ter*/
+const Tentativas = 3;
 
 
-/** "HangmanGame" componente que contém todo o código do jogo */
-const HangmanGame = () => {
+/** "Jogo_da_Forca" componente que contém todo o código do jogo */
+const Jogo_da_Forca = () => {
   /** Palavra secreta é selecionada aleatoriamente da lista de marcas e modelos*/
   const [selectedCar, setSelectedCar] = useState(
-    CAR_BRANDS_AND_MODELS[Math.floor(Math.random() * CAR_BRANDS_AND_MODELS.length)]
+    Marca_Modelo[Math.floor(Math.random() * Marca_Modelo.length)]
   );
   const [guessedLetters, setGuessedLetters] = useState(new Set());
-  const [attemptsLeft, setAttemptsLeft] = useState(MAX_ATTEMPTS);
+  const [attemptsLeft, setAttemptsLeft] = useState(Tentativas);
   const [wrongLetters, setWrongLetters] = useState([]);  /* "wrongLetters" Inicia Vazio e armazena as letras Erradas*/
   const [isKeyboardDisabled, setIsKeyboardDisabled] = useState(false); /**Verifica se o teclado de letras está habilitado ou não */
 
@@ -74,10 +74,10 @@ const HangmanGame = () => {
   };
 /**Reinicia o jogo, reinicia letras adivinhadas, letras errada e tentativas restantes. Set nova palavra secreta e reabilita o teclado após (500ms) */  
   const resetGame = () => {
-    setSelectedCar(CAR_BRANDS_AND_MODELS[Math.floor(Math.random() * CAR_BRANDS_AND_MODELS.length)]);
+    setSelectedCar(Marca_Modelo[Math.floor(Math.random() * Marca_Modelo.length)]);
     setGuessedLetters(new Set());
     setWrongLetters(new Set());
-    setAttemptsLeft(MAX_ATTEMPTS);
+    setAttemptsLeft(Tentativas);
     setIsKeyboardDisabled(true);
     setTimeout(() => {
       setIsKeyboardDisabled(false);
@@ -109,4 +109,4 @@ const HangmanGame = () => {
   );
 };
 
-export default HangmanGame;
+export default Jogo_da_Forca;
