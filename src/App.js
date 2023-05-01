@@ -3,12 +3,23 @@ import React, { useState } from "react";
 
 /** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo*/
 const Marca_Modelo = [
-  "Ford Mustang",
-  "Banana",
+  "Honda Accord", "Honda Civic", "Honda CRV", "Honda HRV", "Honda WRV", "Honda Fit", "Honda City",
+  "Toyota Camry", "Toyota Corolla", "Toyota Hilux", "Toyota Etios", "Toyota Yaris", "Toyota Prius", "Toyota Bandeirante", "Toyota Supra", "Toyota Fielder", "Toyota Tundra",
+  "Ford KA", "Ford Fiesta", "Ford Focus", "Ford Fusion", "Ford Edge", "Ford Ecosport", "Ford Maverick", "Ford Mustang", "Ford Ranger",
+  "Chevrolet Astra", "Chevrolet Celta", "Chevrolet Blazer", "Chevrolet Opala", "Chevrolet Camaro", "Chevrolet Corsa", "Chevrolet Corvette", "Chevrolet Cruze", "Chevrolet Equinox",
+  "Chevrolet Malibu", "Chevrolet Montana", "Chevrolet Omega", "Chevrolet Monza", "Chevrolet Onix", "Chevrolet Prisma", "Chevrolet Spin", "Chevrolet Tracker", "Chevrolet Vectra",
+  "Fiat Argo", "Fiat Uno", "Fiat Cronos", "Fiat Linea", "Fiat Mobi", "Fiat Palio", "Fiat Pulse", "Fiat Punto", "Fiat Stilo", "Fiat Strada", "Fiat Toro", "Fiat Idea", "Fiat Freemont", "Fiat Fiorino",
+  "Hyundai Azera", "Hyundai Creta", "Hyundai Elantra", "Hyundai Sonata", "Hyundai Tucson", "Hyundai Veloster", "Hyundai Veracruz",
+  "Kia Cadenza", "Kia Carnival", "Kia Cerato", "Kia Mohave", "Kia Optima", "Kia Picanto", "Kia Rio", "kia Sorento", "Kia Soul", "Kia Sportage", "Kia Stinger",
+  "Volkswagen Amarok", "Volkswagen Bora", "Volkswagen Fox", "Volkswagen Fusca", "Volkswagen Gol", "Volkswagen Golf", "Volkswagen Jetta", "Volkswagen Nivus", "Volkswagen Parati", "Volkswagen Passat",
+  "Volkswagen Polo", "Volkswagen Santana", "Volkswagen Saveiro", "Volkswagen Quantum", "Volkswagen Spacefox", "Volkswagen Tcross", "Volkswagen Taos", "Volkswagen Tiguan", "Volkswagen Touareg", "Volkswagen Up",
+  "Volkswagen Virtus", "Volkswagen Voyage", "Volkswagen Variant",
+  "Mitsubishi ASX", "Mitsubishi Eclipse", "Mitsubishi Lancer", "Mitsubishi Pajero", "Mitsubishi Outlander",
+  "Jeep Compass", "Jeep Commander", "Jeep Renegade", "Jeep Wrangler", "Jeep Cherokee"
 ];
 
 /** "Tentativas" Define um número máximo de erros que o jogador pode ter*/
-const Tentativas = 3;
+const Tentativas = 5;
 
 
 /** "Jogo_da_Forca" componente que contém todo o código do jogo */
