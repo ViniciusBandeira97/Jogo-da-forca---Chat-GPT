@@ -1,4 +1,5 @@
 import './App.css';
+import './StyleButtonNovoJogo.css';
 import React, { useState } from "react";
 
 /** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo com 168 Modelos*/
@@ -121,23 +122,32 @@ const Jogo_da_Forca = () => {
 
 
   return (
-    <div>
-      <h1>Jogo da forca - Car Brands and Models Edition</h1>
+    <div className='container'>
+      <h1>Jogo da forca</h1>
+      <h2>Vejá se você realmente é um entendedor do mundo automotivo</h2>
       <p>Você possui: {attemptsLeft} tentativas</p>
       <p>{getMaskedCarName()}</p>
-      <div>
-        {Array.from("abcdefghijklmnopqrstuvwxyz0123456789").map((letter) => (
-          <button key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
-            {letter}
-          </button>
-        ))}
-          <p>Wrong letters: {getWrongLetters()}</p>
+
+      <div className='teclado'>
+          {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
+            <button className='alfabeto' key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
+              {letter}
+            </button> ))}   
+      </div>  
+      <div className='teclado'>
+          {Array.from("0123456789").map((letter) => (
+            <button className='numerico' key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
+              {letter}
+            </button> ))}
       </div>
+          <p>Você errou isso: {getWrongLetters()}</p>
       {isGameOver() && (
         <div>
-          <p>{selectedCar}</p>
-          <button onClick={resetGame}>Play Again</button>
+          <div><p className='correto'>{selectedCar}</p></div>
+          <div><button className='novojogo' onClick={resetGame}>Nova Partida</button></div>
+          
         </div>
+
       )}
     </div>
   );

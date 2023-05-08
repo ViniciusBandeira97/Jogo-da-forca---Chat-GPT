@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.teclado{
+  /* outras propriedades de estilo */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 15px;
+  padding: 15px;
+  width: 800px;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer; 
 }
 
-.App-link {
-  color: #61dafb;
+.alfabeto{
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgb(70, 69, 69);
+  border: 2px solid rgba(255, 255, 255, 0.01);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
+  color: #09ebf3;
+  flex-basis: 8%;
+  font-family: inherit;
+  font-size: 35px;
+  height: 55px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.numerico{
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgb(70, 69, 69);
+  border: 2px solid rgba(255, 255, 255, 0.01);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
+  color: #09ebf3;
+  flex-basis: 8%;
+  font-family: inherit;
+  font-size: 35px;
+  height: 55px;
+}
+.correto {
+  padding: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  color:green;
 }
