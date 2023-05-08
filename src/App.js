@@ -1,21 +1,44 @@
 import './App.css';
 import React, { useState } from "react";
 
-/** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo*/
+/** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo com 168 Modelos*/
 const Marca_Modelo = [
+  /** HONDA */
   "Honda Accord", "Honda Civic", "Honda CRV", "Honda HRV", "Honda WRV", "Honda Fit", "Honda City",
-  "Toyota Camry", "Toyota Corolla", "Toyota Hilux", "Toyota Etios", "Toyota Yaris", "Toyota Prius", "Toyota Bandeirante", "Toyota Supra", "Toyota Fielder", "Toyota Tundra",
-  "Ford KA", "Ford Fiesta", "Ford Focus", "Ford Fusion", "Ford Edge", "Ford Ecosport", "Ford Maverick", "Ford Mustang", "Ford Ranger",
+  /** TOYOTA */
+  "Toyota Camry", "Toyota Corolla", "Toyota Hilux", "Toyota Etios", "Toyota Yaris", "Toyota Prius", "Toyota Bandeirante", "Toyota Supra", "Toyota Fielder", "Toyota Tundra", "Toyota RAV4",
+  /** NISSAN */
+  "Nissan 350Z", "Nissan 370Z", "Nissan Frontier", "Nissan GTR", "Nissan March", "Nissan Sentra", "Nissan Tida", "Nissan Versa",
+  /** FORD */
+  "Ford KA", "Ford Fiesta", "Ford Focus", "Ford Fusion", "Ford Edge", "Ford Ecosport", "Ford Maverick", "Ford Mustang", "Ford Ranger", "Ford F1000", "Ford F150",
+  /** Chevrolet */
   "Chevrolet Astra", "Chevrolet Celta", "Chevrolet Blazer", "Chevrolet Opala", "Chevrolet Camaro", "Chevrolet Corsa", "Chevrolet Corvette", "Chevrolet Cruze", "Chevrolet Equinox",
   "Chevrolet Malibu", "Chevrolet Montana", "Chevrolet Omega", "Chevrolet Monza", "Chevrolet Onix", "Chevrolet Prisma", "Chevrolet Spin", "Chevrolet Tracker", "Chevrolet Vectra",
+  "Chevrolet S10",
+  /** FIAT */
   "Fiat Argo", "Fiat Uno", "Fiat Cronos", "Fiat Linea", "Fiat Mobi", "Fiat Palio", "Fiat Pulse", "Fiat Punto", "Fiat Stilo", "Fiat Strada", "Fiat Toro", "Fiat Idea", "Fiat Freemont", "Fiat Fiorino",
-  "Hyundai Azera", "Hyundai Creta", "Hyundai Elantra", "Hyundai Sonata", "Hyundai Tucson", "Hyundai Veloster", "Hyundai Veracruz",
+  "FIAT 147",
+  /** Hyundai */
+  "Hyundai Azera", "Hyundai Creta", "Hyundai Elantra", "Hyundai Sonata", "Hyundai Tucson", "Hyundai Veloster", "Hyundai Veracruz", "Hyundai I30", "Hyundai HB20", "Hyundai IX35",
+  /** Kia */
   "Kia Cadenza", "Kia Carnival", "Kia Cerato", "Kia Mohave", "Kia Optima", "Kia Picanto", "Kia Rio", "kia Sorento", "Kia Soul", "Kia Sportage", "Kia Stinger",
+  /** Volkswagen */
   "Volkswagen Amarok", "Volkswagen Bora", "Volkswagen Fox", "Volkswagen Fusca", "Volkswagen Gol", "Volkswagen Golf", "Volkswagen Jetta", "Volkswagen Nivus", "Volkswagen Parati", "Volkswagen Passat",
   "Volkswagen Polo", "Volkswagen Santana", "Volkswagen Saveiro", "Volkswagen Quantum", "Volkswagen Spacefox", "Volkswagen Tcross", "Volkswagen Taos", "Volkswagen Tiguan", "Volkswagen Touareg", "Volkswagen Up",
   "Volkswagen Virtus", "Volkswagen Voyage", "Volkswagen Variant",
-  "Mitsubishi ASX", "Mitsubishi Eclipse", "Mitsubishi Lancer", "Mitsubishi Pajero", "Mitsubishi Outlander",
-  "Jeep Compass", "Jeep Commander", "Jeep Renegade", "Jeep Wrangler", "Jeep Cherokee"
+  /** Mitsubishi */
+  "Mitsubishi ASX", "Mitsubishi Eclipse", "Mitsubishi Lancer", "Mitsubishi Pajero", "Mitsubishi Outlander", "Mitsubishi L200",
+  /** Jeep */
+  "Jeep Compass", "Jeep Commander", "Jeep Renegade", "Jeep Wrangler", "Jeep Cherokee",
+  /** BMW */
+  "BMW 120I", "BMW 320I", "BMW 325I", "BMW 328I", "BMW 335I", "BMW M2", "BMW M3", "BMW M5", "BMW X1", "BMW X3", "BMW X5", "BMW X6",
+  /** Mercedes-Benz */
+  "MercedesBenz A200", "MercedesBenz C180", "MercedesBenz C200", "MercedesBenz C63AMG", "MercedesBenz GLA200",
+  /** Audi */
+  "Audi A1", "Audi A3", "Audi A4", "Audi A5", "Audi Q3", "Audi Q5", "Audi Q7", "Audi RS3", "Audi RS6", "Audi RS7", "Audi TT", "Audi R8",
+  /** Porsche */
+  "Porsche Cayenne", "Porsche Boxster", "Porsche Macan", "Porsche Panamera", "Porsche Cayman", "Porsche 911", "Porsche 918"
+  
 ];
 
 /** "Tentativas" Define um número máximo de erros que o jogador pode ter*/
@@ -65,7 +88,7 @@ const Jogo_da_Forca = () => {
     return selectedCar
       .split("")
       .map((char) => {
-        if (/^[a-zA-Z]$/.test(char)) {
+        if (/^[a-zA-Z0-9]$/.test(char)) {
           const isLetterGuessed = guessedLetters.has(char.toLowerCase());
           return isLetterGuessed ? char : " _ ";
         } else if (char === " ") {
@@ -103,7 +126,7 @@ const Jogo_da_Forca = () => {
       <p>Você possui: {attemptsLeft} tentativas</p>
       <p>{getMaskedCarName()}</p>
       <div>
-        {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
+        {Array.from("abcdefghijklmnopqrstuvwxyz0123456789").map((letter) => (
           <button key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
             {letter}
           </button>
