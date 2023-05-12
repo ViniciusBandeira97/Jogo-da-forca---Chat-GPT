@@ -1,6 +1,9 @@
-import './App.css';
-import './StyleButtonNovoJogo.css';
+import './Style/App.css';
+import './Style/ButtonNovoJogo.css'
+import './Style/PalavraSecreta.css'
+import './Style/Paragrafo.css'
 import React, { useState } from "react";
+
 
 /** "Marca_Modelo" Cria uma lista de marcas e modelos de carros para o jogo com 168 Modelos*/
 const Marca_Modelo = [
@@ -100,6 +103,8 @@ const Jogo_da_Forca = () => {
       })
       .join("");
   };
+
+  
 /**Desabilita o teclado de letras, tornando todos os botões de letras inativos */
   const disableKeyboard = () => {
     const keyboardButtons = document.querySelectorAll("button");
@@ -112,6 +117,7 @@ const Jogo_da_Forca = () => {
     setSelectedCar(Marca_Modelo[Math.floor(Math.random() * Marca_Modelo.length)]);
     setGuessedLetters(new Set());
     setWrongLetters(new Set());
+    verificaResultado(new Set());
     setAttemptsLeft(Tentativas);
     setIsKeyboardDisabled(true);
     setTimeout(() => {
@@ -119,37 +125,57 @@ const Jogo_da_Forca = () => {
     }, 500);
   };
 
+  const verificaResultado = ()  =>{
+    const msg1 = 'Parabéns você acertou!';
+    const msg2 = 'Você perdeu!';
+    
+    if(attemptsLeft >= 1){
+      return msg1;
+    }else {
+      return msg2;
+    }
+  };
 
 
   return (
+    <>
+       <header>
+        <h1>Jogo da forca</h1>
+      </header>
     <div className='container'>
-      <h1>Jogo da forca</h1>
-      <h2>Vejá se você realmente é um entendedor do mundo automotivo</h2>
-      <p>Você possui: {attemptsLeft} tentativas</p>
-      <p>{getMaskedCarName()}</p>
+      <p className='Pos-Titulo'>Veja se você realmente é um entendedor do mundo automotivo</p>
+      <p className='Legenda'>Primeira palavra é composta por MARCA e a segunda palavra por MODELO de carro correspondente a marca.</p>
+      <p className='Tentativas'>Você possui: {attemptsLeft} tentativas</p>
+      <p className='Errou'>Erros: {getWrongLetters()}</p>
+      <p className='Palavra-Secreta'>{getMaskedCarName()}</p>
 
       <div className='teclado'>
           {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
             <button className='alfabeto' key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
               {letter}
             </button> ))}   
-      </div>  
-      <div className='teclado'>
+          <div className='teclado'>  
           {Array.from("0123456789").map((letter) => (
             <button className='numerico' key={letter} disabled={guessedLetters.has(letter.toLowerCase()) || isKeyboardDisabled } onClick={() => handleGuess(letter)}>
               {letter}
-            </button> ))}
+            </button> ))} 
+          </div>
       </div>
-          <p>Você errou isso: {getWrongLetters()}</p>
       {isGameOver() && (
         <div>
-          <div><p className='correto'>{selectedCar}</p></div>
-          <div><button className='novojogo' onClick={resetGame}>Nova Partida</button></div>
-          
+          <div>
+            <h2 className='mensagem'>{verificaResultado()}</h2>
+            <p className='correto'>{selectedCar}</p>
+          </div>
+          <button className='novojogo' onClick={resetGame}>Nova Partida</button>
+          <p>Jogue novamente</p>
         </div>
 
       )}
+      
     </div>
+      <footer><p></p></footer>
+    </>
   );
 };
 
