@@ -7,21 +7,20 @@ header {
   position: static;
   top: 0;
   width: 100%;
-  height: 70px;
-  background-color:rgb(255, 228, 138);
-  color: #fff;
+  height: 65px;
+  background-color:rgb(0, 6, 90);
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
 .container {
   width: 100%;
-  height: 800px;
-  background-color: #eee;
+  height: 700px;
+  background-color: #d4d4d4;
   margin: 0 auto;
-  display:inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  z-index: 1;
 }
 
 footer {
@@ -31,56 +30,9 @@ footer {
   height: 100px;
   background-color: #000130;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 
-.teclado{
-  /* outras propriedades de estilo */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 15px;
-  width: 800px;
-  border-radius: 40px;
-  background-color: #8f8e8e;
-  cursor: pointer; 
-}
-
-button:disabled{
-  opacity: 0.5;
-}
-
-.alfabeto{
-  text-transform: uppercase; /* Converte o texto em letras maiúsculas */
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  background: rgb(48, 47, 47);
-  border: 2px solid rgba(255, 255, 255, 0.01);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
-  color: #09ebf3;
-  flex-basis: 7%;
-  font-family: inherit;
-  font-size: 27px;
-  height: 45px;
-}
-
-.numerico{
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  background: rgb(48, 47, 47);
-  border: 2px solid rgba(255, 255, 255, 0.01);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.01);
-  color: #09ebf3;
-  flex-basis: 7%;
-  font-family: inherit;
-  font-size: 27px;
-  height: 45px;
-}
 .correto {
   padding: 35px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

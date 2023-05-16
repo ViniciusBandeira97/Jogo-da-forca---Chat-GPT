@@ -1,9 +1,8 @@
-/* Classe CSS para estilizar o elemento p que contém o nome do carro (Marca/Modelo) mascarado */
 h1 {
     font-size: 50px; /* Define o tamanho da fonte */
     font-weight:bold; /* Define o peso da fonte para negrito */
     text-align: center; 
-    color: rgb(4, 8, 231); /* Define a cor do titulo */
+    color: rgb(245, 245, 245); /* Define a cor do titulo */
     margin: 0; /* Define a margem superior e inferior */
   }
 
@@ -11,21 +10,24 @@ h1 {
     font-size: 20px; /* Define o tamanho da fonte */
     font-family:Arial, Helvetica, sans-serif; /* Define fonte de letra */
     font-weight:600; /* Define o peso da fonte para negrito */
-    margin: 0; /* Define a margem superior e inferior */
+    margin: 0.1cm; /* Define a margem superior e inferior */
+    text-align: center;
 }
 
 .Legenda{
     font-size: 16px; /* Define o tamanho da fonte */
     font-family:Arial, Helvetica, sans-serif; /* Define fonte de letra */
     font-weight:200; /* Define o peso da fonte para negrito */
-    margin: 1; /* Define a margem superior e inferior */
+    margin:0.2cm; /* Define a margem superior e inferior */
+    text-align: center;
 }
 
 .Tentativas{
     font-size: 20px; /* Define o tamanho da fonte */
     font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
     font-weight: bold; /* Define o peso da fonte para negrito */
-    margin: 0; /* Define a margem superior e inferior */
+    margin: 0.1cm; /* Define a margem superior e inferior */
+    text-align: center;
 }
 
 .Errou{
@@ -33,19 +35,30 @@ h1 {
     font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
     font-weight: bold; /* Define o peso da fonte para negrito */
     margin: 0; /* Define a margem superior e inferior */
+    text-align: left;
+    margin-left: 551px;
 }
 
 .mensagem{
-        font-size: 25px; /* Define o tamanho da fonte */
-        font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
-        color: green;
-        font-weight: bold; /* Define o peso da fonte para negrito */
-        margin: 1; /* Define a margem superior e inferior */
+    font-size: 25px; /* Define o tamanho da fonte */
+    font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
+    color: green;
+    font-weight: bold; /* Define o peso da fonte para negrito */
+    margin: 1; /* Define a margem superior e inferior */
+    text-align: center;
 }
 .correto {
     padding: 35px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
     color:green;
-    margin: 1; /* Define a margem superior e inferior */
+    margin: 0; /* Define a margem superior e inferior */
+    text-align: center;
+}
+
+.TextFooter{
+    font-size: 16px; /* Define o tamanho da fonte */
+    font-weight:200; /* Define o peso da fonte para negrito */
+    margin:0.1cm; /* Define a margem superior e inferior */
+    text-align: left;
 }

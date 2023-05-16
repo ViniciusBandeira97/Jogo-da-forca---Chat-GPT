@@ -1,7 +1,8 @@
 import './Style/App.css';
 import './Style/ButtonNovoJogo.css'
 import './Style/PalavraSecreta.css'
-import './Style/Paragrafo.css'
+import './Style/StyleText.css'
+import './Style/StyleTeclado.css'
 import React, { useState } from "react";
 
 
@@ -46,7 +47,7 @@ const Marca_Modelo = [
 ];
 
 /** "Tentativas" Define um número máximo de erros que o jogador pode ter*/
-const Tentativas = 5;
+const Tentativas = 1;
 
 
 /** "Jogo_da_Forca" componente que contém todo o código do jogo */
@@ -146,7 +147,7 @@ const Jogo_da_Forca = () => {
       <p className='Pos-Titulo'>Veja se você realmente é um entendedor do mundo automotivo</p>
       <p className='Legenda'>Primeira palavra é composta por MARCA e a segunda palavra por MODELO de carro correspondente a marca.</p>
       <p className='Tentativas'>Você possui: {attemptsLeft} tentativas</p>
-      <p className='Errou'>Erros: {getWrongLetters()}</p>
+      <p className='Errou'>Você errou: {getWrongLetters()}</p>
       <p className='Palavra-Secreta'>{getMaskedCarName()}</p>
 
       <div className='teclado'>
@@ -163,18 +164,21 @@ const Jogo_da_Forca = () => {
       </div>
       {isGameOver() && (
         <div>
-          <div>
             <h2 className='mensagem'>{verificaResultado()}</h2>
             <p className='correto'>{selectedCar}</p>
+          <div className='wrap'>
+            <button className='novojogo' onClick={resetGame}>Nova Partida</button>
           </div>
-          <button className='novojogo' onClick={resetGame}>Nova Partida</button>
-          <p>Jogue novamente</p>
         </div>
 
       )}
       
     </div>
-      <footer><p></p></footer>
+      <footer>
+        <p className='TextFooter'>Rio Grande do Sul - Brasil</p>
+        <p className='TextFooter'>Produzido: Vinicius Bandeira</p>
+        <p className='TextFooter'>E-mail: viniciusbbandeira@outlook.com</p>
+        </footer>
     </>
   );
 };
