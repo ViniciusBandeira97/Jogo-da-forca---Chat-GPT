@@ -39,3 +39,9 @@ footer {
   font-size: 35px;
   color:green;
 }
+
+@media (min-height: 850px){
+  .container{
+    height: 800px;
+  }
+}

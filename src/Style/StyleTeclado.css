@@ -44,3 +44,51 @@
     font-size: 27px;
     height: 45px;
   }
+
+@media (max-width: 850px){
+  .teclado{
+    /* outras propriedades de estilo */
+    gap: 10px;
+    padding: 10px;
+    width: 500px;
+    border-radius: 30px;
+  }
+  .alfabeto{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 7%;
+    font-size: 27px;
+    height: 45px;
+  }
+  .numerico{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 7%;
+    font-size: 27px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 520px){
+  .teclado{
+    /* outras propriedades de estilo */
+    gap: 7px;
+    padding: 7px;
+    width: 400px;
+    border-radius: 15px;
+  }
+  .alfabeto{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 7%;
+    font-size: 27px;
+    height: 35px;
+  }
+  .numerico{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 7%;
+    font-size: 27px;
+    height: 35px;
+  }
+}

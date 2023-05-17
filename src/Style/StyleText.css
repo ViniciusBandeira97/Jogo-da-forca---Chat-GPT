@@ -35,8 +35,7 @@ h1 {
     font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
     font-weight: bold; /* Define o peso da fonte para negrito */
     margin: 0; /* Define a margem superior e inferior */
-    text-align: left;
-    margin-left: 551px;
+    text-align: center;
 }
 
 .mensagem{
@@ -62,3 +61,4 @@ h1 {
     margin:0.1cm; /* Define a margem superior e inferior */
     text-align: left;
 }
+
