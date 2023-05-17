@@ -45,6 +45,7 @@
     height: 45px;
   }
 
+/*  Responsividade: Teclado no uso em meia tela desktop/Notebook */ 
 @media (max-width: 850px){
   .teclado{
     /* outras propriedades de estilo */
@@ -69,6 +70,7 @@
   }
 }
 
+/* Responsividade: Teclado no uso em menor tela possivel desktop/Notebook */
 @media (max-width: 520px){
   .teclado{
     /* outras propriedades de estilo */
@@ -90,5 +92,30 @@
     flex-basis: 7%;
     font-size: 27px;
     height: 35px;
+  }
+}
+
+/* Responsividade: telcado no uso em Smartphone  */
+@media (max-width: 460px){
+  .teclado{
+    /* outras propriedades de estilo */
+    gap: 12px;
+    padding: 5px;
+    width: 395px;
+    border-radius: 15px;
+  }
+  .alfabeto{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 14%;
+    font-size: 30px;
+    height: 40px;
+  }
+  .numerico{
+    border: 2px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10px;
+    flex-basis: 14%;
+    font-size: 30px;
+    height: 40px;
   }
 }

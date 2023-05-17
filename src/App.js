@@ -3,6 +3,7 @@ import './Style/ButtonNovoJogo.css'
 import './Style/PalavraSecreta.css'
 import './Style/StyleText.css'
 import './Style/StyleTeclado.css'
+
 import React, { useState } from "react";
 
 
@@ -176,9 +177,14 @@ const Jogo_da_Forca = () => {
     </div>
       <footer>
         <p className='TextFooter'>Rio Grande do Sul - Brasil</p>
-        <p className='TextFooter'>Produzido: Vinicius Bandeira</p>
-        <p className='TextFooter'>E-mail: viniciusbbandeira@outlook.com</p>
-        </footer>
+        <p className='TextFooter'>By: Vinicius Bandeira</p>
+        <a href='mailto:viniciusbbandeira@outlook.com'>
+          <img src='https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white' alt='' target="_blank"/> .
+        </a>
+        <a href='https://www.linkedin.com/in/vinicius-bandeira-3133b11ba'>
+          <img src='https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white' alt='' target="_blank"/>
+        </a>
+      </footer>
     </>
   );
 };

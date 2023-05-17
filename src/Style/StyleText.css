@@ -24,7 +24,7 @@ h1 {
 
 .Tentativas{
     font-size: 20px; /* Define o tamanho da fonte */
-    font-family:Georgia, 'Times New Roman', Times, serif; /* Define fonte de letra */
+    font-family:Arial, Helvetica, sans-serif; /* Define fonte de letra */
     font-weight: bold; /* Define o peso da fonte para negrito */
     margin: 0.1cm; /* Define a margem superior e inferior */
     text-align: center;
@@ -62,3 +62,14 @@ h1 {
     text-align: left;
 }
 
+/* Responsividade: Uso em Smartphone  */
+@media (max-width: 460px){
+    .Pos-Titulo {
+        font-size: 18px; /* Define o tamanho da fonte */
+        margin: 0; /* Define a margem superior e inferior */
+    }
+    .Legenda{
+        font-size: 14px; /* Define o tamanho da fonte */
+        margin: 0; /* Define a margem superior e inferior */
+    }
+}

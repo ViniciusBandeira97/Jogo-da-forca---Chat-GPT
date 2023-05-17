@@ -45,3 +45,9 @@ footer {
     height: 800px;
   }
 }
+
+@media (max-height: 375px){
+  .container{
+    height: 850px;
+  }
+}
