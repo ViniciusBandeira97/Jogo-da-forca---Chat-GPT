@@ -37,9 +37,10 @@ A IA foi de grande importância na parte de esconder a palavra-chave e criar os 
 1) VSCODE
 2) Framework REACT
 3) NPM
-4) DevTools (MS Edge)
-5) Git e Github
-6) AWS S3
+4) Chat GPT
+5) DevTools (MS Edge)
+6) Git e Github
+7) AWS S3
 
 # Final:
 Através dessa experiencia, posso concluir que o chat GPT é um bom ajudante de programador. Porém, não tem habilidades suficientes para projetar códigos complexos e confiáveis. 
