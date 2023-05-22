@@ -49,4 +49,4 @@ O resultado desse jogo supri-o minhas expectativas.
 
 Caso você tenha ideia de melhorias. Por favor, entre em contato comigo ou faça Fork de meu trabalho para continuidade desse projeto.
 
-# Obrigado pelo seu tempo, espero que teste e goste de jogo. :smile:
+# Obrigado pelo seu tempo, espero que goste do jogo. :smile:
