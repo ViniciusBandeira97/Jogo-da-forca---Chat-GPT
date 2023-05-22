@@ -1,8 +1,8 @@
 import './Style/App.css';
-import './Style/ButtonNovoJogo.css'
-import './Style/PalavraSecreta.css'
-import './Style/StyleText.css'
-import './Style/StyleTeclado.css'
+import './Style/ButtonNovoJogo.css';
+import './Style/PalavraSecreta.css';
+import './Style/StyleText.css';
+import './Style/StyleTeclado.css';
 
 import React, { useState } from "react";
 
@@ -48,7 +48,7 @@ const Marca_Modelo = [
 ];
 
 /** "Tentativas" Define um número máximo de erros que o jogador pode ter*/
-const Tentativas = 1;
+const Tentativas = 6;
 
 
 /** "Jogo_da_Forca" componente que contém todo o código do jogo */
@@ -126,7 +126,7 @@ const Jogo_da_Forca = () => {
       setIsKeyboardDisabled(false);
     }, 500);
   };
-
+/** Verifica se o jogador acertou ou errou a palavra secreta e assim retorna seu resultado  */
   const verificaResultado = ()  =>{
     const msg1 = 'Parabéns você acertou!';
     const msg2 = 'Você perdeu!';

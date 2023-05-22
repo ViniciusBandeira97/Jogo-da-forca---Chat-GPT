@@ -1,3 +1,4 @@
+/* Estiliza a classe "teclado" */
 .teclado{
     /* outras propriedades de estilo */
     display:inline-flex;
@@ -11,11 +12,11 @@
     background-color: #757575;
     cursor: pointer; 
   }
-  
+  /* Estiliza o botão desabilitado */
   button:disabled{
     opacity: 0.5;
   }
-  
+  /* Estiliza a classe "alfabeto" */
   .alfabeto{
     text-transform: uppercase; /* Converte o texto em letras maiúsculas */
     backdrop-filter: blur(5.5px);
@@ -30,7 +31,7 @@
     font-size: 27px;
     height: 45px;
   }
-  
+  /* Estiliza a classe "numerico" */
   .numerico{
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
@@ -44,7 +45,6 @@
     font-size: 27px;
     height: 45px;
   }
-
 /*  Responsividade: Teclado no uso em meia tela desktop/Notebook */ 
 @media (max-width: 850px){
   .teclado{
@@ -69,7 +69,6 @@
     height: 45px;
   }
 }
-
 /* Responsividade: Teclado no uso em menor tela possivel desktop/Notebook */
 @media (max-width: 520px){
   .teclado{
@@ -94,7 +93,6 @@
     height: 35px;
   }
 }
-
 /* Responsividade: telcado no uso em Smartphone  */
 @media (max-width: 460px){
   .teclado{
