@@ -47,6 +47,6 @@ Através dessa experiencia, posso concluir que o chat GPT é um bom ajudante de 
 É uma ótima experiência em usar a IA como parceiro para programar, acabamos aprendendo bastante com ela, porem temos que possuir conhecimento suficiente para identificar os problemas e erros que a IA possa gerar.
 O resultado desse jogo supri-o minhas expectativas. 
 
-Caso você tenha ideia de melhoria. Por favor, entre em contato comigo ou faça Fork de meu trabalho para continuidade desse projeto.
+Caso você tenha ideia de melhorias. Por favor, entre em contato comigo ou faça Fork de meu trabalho para continuidade desse projeto.
 
 # Obrigado pelo seu tempo, espero que teste e goste de jogo. :smile:
