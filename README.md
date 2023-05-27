@@ -7,7 +7,7 @@ Jogo disponível para teste usando AWS S3, segue o link:
 
 https://jogo-da-forca.s3.sa-east-1.amazonaws.com/index.html
 
-# RELATORIO DE CRIAÇÃO:
+# RELATÓRIO DE CRIAÇÃO:
 
 # Ideia principal:
 A ideia principal desse projeto foi testar a capacidade de ajuda do chat GPT para criação de código. Não confunda "ajuda" com "copiar código pronto". A principal motivação de usar o Chat GPT foi para testar suas capacidade de criação, como se fosse um segundo DEV ajudando no projeto.
