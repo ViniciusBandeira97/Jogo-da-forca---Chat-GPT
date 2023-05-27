@@ -10,7 +10,7 @@ https://jogo-da-forca.s3.sa-east-1.amazonaws.com/index.html
 # RELATÓRIO DE CRIAÇÃO:
 
 # Ideia principal:
-A ideia principal desse projeto foi testar a capacidade de ajuda do chat GPT para criação de código. Não confunda "ajuda" com "copiar código pronto". A principal motivação de usar o Chat GPT foi para testar suas capacidade de criação, como se fosse um segundo DEV ajudando no projeto.
+A ideia principal desse projeto foi testar a capacidade de ajuda do chat GPT para criação de código. Não confunda "ajuda" com "copiar código pronto". A principal motivação de usar o Chat GPT foi para testar suas capacidade de criação, como se fosse um segundo DEV auxiliando no projeto.
 
 # Problemas: :unamused:
 Em primeiro momento o chat GPT pareceu ser muito útil para iniciar o projeto. Porém, conforme o código crescia foi necessário fazer vários ajustes que a IA não conseguia resolver. 
