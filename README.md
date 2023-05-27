@@ -1,4 +1,4 @@
-# Jogo da forca carros :earth_americas:
+# Jogo da forca carros 🚗 🚙 🛻
 
 Resultado: :heart_eyes:
 ![Captura de tela 2023-05-21 235117](https://github.com/ViniciusBandeira97/Jogo-da-forca---Chat-GPT/assets/97644828/74aa15d5-e595-48d2-aae1-48869d901af8)
